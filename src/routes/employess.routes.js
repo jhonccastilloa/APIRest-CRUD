@@ -1,11 +1,15 @@
 const express = require("express");
-const pool = require("../db");
+const { getEmployees,createEmployee,deleteEmployee,updateEmployee, getEmployee } = require("../controllers/employees.controller");
 
 const router = express.Router();
 
-router.get("/ping", async (req, res) => {
-  const employee = await pool.query("SELECT * FROM employee ");
-  res.json(employee[0]);
-});
 
+router.get("/employees", getEmployees);
+router.get("/employees/:id", getEmployee);
+
+router.post("/employees", createEmployee);
+
+router.put("/employees/:id",updateEmployee );
+
+router.delete("/employees/:id", deleteEmployee);
 module.exports = router;

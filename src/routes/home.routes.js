@@ -1,21 +1,9 @@
 const express = require("express");
+const { getPing } = require("../controllers/home.controller");
 
 const router = express.Router();
 
-router.get("/employees", (req, res) => {
-  res.send("consultqando empleados");
-});
 
-router.post("/employees", (req, res) => {
-  res.send("agregando empleados");
-});
-
-router.put("/employees", (req, res) => {
-  res.send("editando empleados");
-});
-
-router.delete("/employees", (req, res) => {
-  res.send("Eliminando empleados");
-});
+router.get("/ping", getPing);
 
 module.exports = router;
