@@ -4,12 +4,13 @@ const { getEmployees,createEmployee,deleteEmployee,updateEmployee, getEmployee }
 const router = express.Router();
 
 
-router.get("/employees", getEmployees);
-router.get("/employees/:id", getEmployee);
+router.get("/", getEmployees);
+router.get("/:id", getEmployee);
 
-router.post("/employees", createEmployee);
+router.post("/", createEmployee);
 
-router.put("/employees/:id",updateEmployee );
+router.patch("/:id",updateEmployee );
 
-router.delete("/employees/:id", deleteEmployee);
+router.delete("/:id", deleteEmployee);
 module.exports = router;
+
